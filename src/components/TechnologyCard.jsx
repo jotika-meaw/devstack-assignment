@@ -18,9 +18,13 @@ export default function TechnologyCard({ technology, added, onAdd }) {
         <span className="rating">★ {technology.rating}</span>
       </div>
 
-      <button className={`add-button ${added ? 'added' : ''}`} onClick={() => onAdd(technology)}>
-        {added ? 'Undo' : 'Add to Stack'}
-      </button>
+     <button
+      className={`add-button ${added ? 'added' : ''}`}
+      disabled={added}
+      onClick={() => onAdd(technology)}
+     >
+     {added ? '✓ Added to Stack' : 'Add to Stack'}
+    </button>
     </article>
   );
 }

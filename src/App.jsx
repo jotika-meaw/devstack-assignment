@@ -30,14 +30,9 @@ function App() {
     loadTechnologies();
   }, []);
 
- const addToStack = (technology) => {
-  const alreadyAdded = stack.some((item) => item.id === technology.id);
-
-  if (alreadyAdded) {
-    setStack((current) =>
-      current.filter((item) => item.id !== technology.id)
-    );
-    toast.info(`${technology.name} removed from your stack.`);
+const addToStack = (technology) => {
+  if (stack.some((item) => item.id === technology.id)) {
+    toast.warning(`${technology.name} is already in your stack.`);
     return;
   }
 
