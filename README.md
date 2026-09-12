@@ -1,12 +1,21 @@
 # 🧱 Dev Stack — Development Stack Builder
 
-Dev Stack is a responsive React website that helps developers explore technologies and build a personal development stack. It follows the provided Dev Stack assignment UI and requirements, including the technology JSON, stack selection, responsive navigation, loading state, and React-Toastify feedback.
+Dev Stack Builder is a responsive website built with React, JavaScript ES6+, CSS3, JSON, React-Toastify, and Vite.
+
+The main purpose of this project is to let users explore different development technologies and create their own technology stack. Users can view technology details, add technologies to their stack, remove them, and manage their selected technologies easily.
+
+This project was created as part of the Programming Hero A-5 Dev Stack Builder Website assignment.
 
 ## ✨ Features
 
-- **Technology explorer:** 12 technologies are loaded from a JSON file and displayed in responsive cards.
-- **Stack builder:** Add technologies, prevent duplicates, remove individual items, or clear the complete stack.
-- **Responsive UI:** Sticky desktop navigation, mobile hamburger navigation, responsive cards, hero, stack panel, and footer.
+- 🔍 **Explore Technologies** – View technologies with their category, rating, difficulty, and description.
+- 🧱 **Build Your Stack** – Add your favorite technologies to a personal stack.
+- 🚫 **Duplicate Prevention** – Prevents adding the same technology twice.
+- 🗑️ **Remove Technologies** – Remove individual items or clear the entire stack.
+- 🔔 **Toast Notifications** – Get instant feedback for stack actions.
+- 📱 **Responsive Design** – Works smoothly on mobile, tablet, and desktop.
+- 📄 **JSON Data** – Technology information is loaded dynamically from a JSON file.
+- ⏳ **Loading State** – Shows a loading message while technology data is being fetched.
 
 ## 🛠️ Technologies Used
 
@@ -18,27 +27,37 @@ Dev Stack is a responsive React website that helps developers explore technologi
 - Vite
 
 ## 🚀 Run Locally
+First, clone the repository:
+git clone https://github.com/jotika-meaw/devstack-assignment.git
 
-```bash
-npm install
-npm run dev
-```
+Go to the project folder: cd devstack-assignment
 
-Then open the local Vite URL shown in the terminal.
+Install the required packages: npm install
 
-For a production build:
+Start the development server: npm run dev
 
-```bash
-npm run build
-npm run preview
-```
+Then open the local URL shown in the terminal.
+
+Usually, Vite runs the project at: 
+http://localhost:5173/
 
 ## 📁 Project Structure
 
-```text
-DevStack/
+devstack-assignment/
+│
+├── node_modules/
+│
 ├── public/
-│   └── assets/
+│   ├── assets/
+│   │   ├── banner-stack.png
+│   │   ├── hamburger.png
+│   │   ├── logo-text.png
+│   │   ├── YourStack-with.png
+│   │   └── YourStack-without.png
+│   │
+│   └── data/
+│       └── technologies.json
+│
 ├── src/
 │   ├── components/
 │   │   ├── Footer.jsx
@@ -46,62 +65,45 @@ DevStack/
 │   │   ├── Hero.jsx
 │   │   ├── StackPanel.jsx
 │   │   └── TechnologyCard.jsx
-│   ├── data/
-│   │   └── technologies.json
+│   │
 │   ├── App.jsx
 │   ├── main.jsx
 │   └── styles.css
+│
+├── .env.example
+├── .gitignore
 ├── index.html
 ├── package.json
+├── package-lock.json
 └── README.md
-```
+
 
 ## 🧠 React Questions & Answers
 
 ### 1. What is JSX, and why is it used in React?
-JSX is a syntax that lets us write HTML-like UI inside JavaScript. React uses it to make component UI easier to read and build.
+JSX is a syntax that lets us write HTML-like code inside JavaScript. It makes React UI code easier to write and understand.
 
 ### 2. What is the difference between props and state?
-Props are values passed from a parent to a child component. State is data managed inside a component that can change over time.
+Props are used to pass data from a parent component to a child component. State is used to store and manage data inside a component.
 
 ### 3. What does the `useState` hook do, and where did you use it in this project?
-`useState` creates component state and gives a function to update it. This project uses it for the selected stack, loading state, and mobile menu state.
+`useState` is used to create and update state in a React component. I used it to manage the technologies added to the user's stack.
 
 ### 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
-`useEffect` runs side effects after rendering. It is used here to fetch the local JSON data after the component loads.
+`useEffect` is used to perform side effects in a React component. I used it to fetch the technology data from the JSON file when the application loads.
 
 ### 5. Why does every item in a `.map()` list need a unique `key` prop?
-A unique `key` helps React identify each item so it can update the list efficiently when items change.
+A unique `key` helps React identify each item in a list. It helps React update the correct item when the list changes.
 
 ### 6. What is conditional rendering? Show one place you used it.
-Conditional rendering means showing different UI depending on a condition. The stack panel shows `Your stack is empty.` when the stack has no selected technologies; otherwise it shows the selected items.
+Conditional rendering means showing different content based on a condition. I used it in the Your Stack section to show an empty message when no technology has been selected.
 
 ### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
-A parent passes data or functions through props. A child can call a function received as a prop to send an action or value back to the parent. In this project, `TechnologyCard` receives `technology` and `onAdd`, then calls `onAdd(technology)` when its button is clicked.
+A parent can pass data to a child using props. A child can send information back by calling a function passed from the parent as a prop. In this project, `TechnologyCard` receives `technology` and `onAdd`, then calls `onAdd(technology)` when its button is clicked.
 
-## 📌 Assignment Checklist
-
-- [x] Sticky desktop navbar
-- [x] Mobile hamburger navbar
-- [x] Hero heading, description, buttons, and provided hero image
-- [x] 10–15 technology records in JSON
-- [x] JSON loaded with `useEffect`
-- [x] Loading spinner/message
-- [x] Responsive 3/2/1-column technology grid
-- [x] Technology cards with icon, badge, name, description, category, difficulty, rating, and button
-- [x] Your Stack sidebar
-- [x] Duplicate prevention with warning toast
-- [x] Added button state
-- [x] Individual remove
-- [x] Remove All
-- [x] React-Toastify notifications for add, duplicate, remove, and remove all
-- [x] Shared orange → pink → violet gradient variable
-- [x] Footer with brand, social links, Product, Company, Legal, Privacy, and Terms
-- [x] Responsive mobile/tablet/desktop layout
-- [x] README with project information and React answers
 
 ## 🌐 Submission
 
-GitHub Repository Link: _Add your repository URL here_
+**Dev Stack Builder Live Website** : https://devstack-assignment.vercel.app/
 
-Live Site Link: _Add your deployed site URL here_
+**📂 GitHub Repository** : https://github.com/jotika-meaw/devstack-assignment
