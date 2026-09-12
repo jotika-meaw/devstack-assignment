@@ -42,7 +42,7 @@ Usually, Vite runs the project at:
 http://localhost:5173/
 
 ## 📁 Project Structure
-
+```text
 devstack-assignment/
 │
 ├── node_modules/
@@ -76,7 +76,7 @@ devstack-assignment/
 ├── package.json
 ├── package-lock.json
 └── README.md
-
+```
 
 ## 🧠 React Questions & Answers
 
