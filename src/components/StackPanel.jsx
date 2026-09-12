@@ -1,3 +1,4 @@
+import React from "react";
 export default function StackPanel({ stack, onRemove, onRemoveAll }) {
   return (
     <aside className="stack-panel">
