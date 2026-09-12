@@ -24,20 +24,26 @@ function App() {
         console.error(error);
         toast.error('Could not load technology data. Please refresh the page.');
       } finally {
-        setTimeout(() => setLoading(false), 250);
+        setTimeout(() => setLoading(false), 500); // Simulate a slight delay for better UX
       }
     };
     loadTechnologies();
   }, []);
 
-  const addToStack = (technology) => {
-    if (stack.some((item) => item.id === technology.id)) {
-      toast.warning(`${technology.name} is already in your stack.`);
-      return;
-    }
-    setStack((current) => [...current, technology]);
-    toast.success(`${technology.name} added to your stack.`);
-  };
+ const addToStack = (technology) => {
+  const alreadyAdded = stack.some((item) => item.id === technology.id);
+
+  if (alreadyAdded) {
+    setStack((current) =>
+      current.filter((item) => item.id !== technology.id)
+    );
+    toast.info(`${technology.name} removed from your stack.`);
+    return;
+  }
+
+  setStack((current) => [...current, technology]);
+  toast.success(`${technology.name} added to your stack.`);
+};
 
   const removeFromStack = (id) => {
     const removed = stack.find((item) => item.id === id);

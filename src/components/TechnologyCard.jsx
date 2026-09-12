@@ -1,7 +1,7 @@
 import React from "react";
 export default function TechnologyCard({ technology, added, onAdd }) {
   return (
-    <article className="tech-card">
+    <article className={`tech-card ${added ? 'selected' : ''}`}>
       <div className="card-topline">
         <div className="tech-icon-wrap">
           <img className="tech-icon" src={technology.icon} alt="" loading="lazy" />
@@ -18,8 +18,8 @@ export default function TechnologyCard({ technology, added, onAdd }) {
         <span className="rating">★ {technology.rating}</span>
       </div>
 
-      <button className={`add-button ${added ? 'added' : ''}`} disabled={added} onClick={() => onAdd(technology)}>
-        {added ? '✓ Added to Stack' : 'Add to Stack'}
+      <button className={`add-button ${added ? 'added' : ''}`} onClick={() => onAdd(technology)}>
+        {added ? 'Undo' : 'Add to Stack'}
       </button>
     </article>
   );
