@@ -6,6 +6,16 @@ The main purpose of this project is to let users explore different development t
 
 This project was created as part of the Programming Hero A-5 Dev Stack Builder Website assignment.
 
+## 🛠️ Technologies Used
+
+- React.js
+- JavaScript ES6+
+- CSS3
+- JSON
+- React-Toastify
+- Vite
+
+
 ## ✨ Features
 
 - 🔍 **Explore Technologies** – View technologies with their category, rating, difficulty, and description.
@@ -17,29 +27,6 @@ This project was created as part of the Programming Hero A-5 Dev Stack Builder W
 - 📄 **JSON Data** – Technology information is loaded dynamically from a JSON file.
 - ⏳ **Loading State** – Shows a loading message while technology data is being fetched.
 
-## 🛠️ Technologies Used
-
-- React.js
-- JavaScript ES6+
-- CSS3
-- JSON
-- React-Toastify
-- Vite
-
-## 🚀 Run Locally
-First, clone the repository:
-git clone https://github.com/jotika-meaw/devstack-assignment.git
-
-Go to the project folder: cd devstack-assignment
-
-Install the required packages: npm install
-
-Start the development server: npm run dev
-
-Then open the local URL shown in the terminal.
-
-Usually, Vite runs the project at: 
-http://localhost:5173/
 
 ## 📁 Project Structure
 ```text
