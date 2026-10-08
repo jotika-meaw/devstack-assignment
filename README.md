@@ -89,6 +89,17 @@ Conditional rendering means showing different content based on a condition. I us
 A parent can pass data to a child using props. A child can send information back by calling a function passed from the parent as a prop. In this project, `TechnologyCard` receives `technology` and `onAdd`, then calls `onAdd(technology)` when its button is clicked.
 
 
+## Getting Started
+
+```bash
+git clone https://github.com/jotika-meaw/devstack-assignment.git
+cd devstack-assignment
+npm install
+npm run dev
+```
+
+Open http://localhost:5173 in your browser.
+
 ## 🌐 Submission
 
 **Dev Stack Builder Live Website** : https://devstack-assignment.vercel.app/
